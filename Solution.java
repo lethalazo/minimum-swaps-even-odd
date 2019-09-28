@@ -8,6 +8,8 @@ class Solution {
         }
 
         try {
+            // Make a list of integers from an arg string by splitting the string using a "," delimeter and converting it to a stream.
+            // Map every element on the stream to the parseInt method and collect the result as a list.
             List<Integer> numbers = Arrays.stream(args[0].split(",")).map(Integer::parseInt).collect(Collectors.toList());        
             System.out.println("Min swaps: " + result(numbers));
             System.out.print("Resulting list: " + numbers.toString());
@@ -17,6 +19,11 @@ class Solution {
         }
     }
 
+    /**
+     * This mimics the partition method when doing quickSort. Swaps misplaced (as according to the problem statement) elements
+     * @param a list of numbers
+     * @return swaps taken
+     */
     public static int result(List<Integer> a) {
         int left = 0;
         int right = a.size() - 1;
